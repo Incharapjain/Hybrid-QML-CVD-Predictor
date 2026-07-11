@@ -1,0 +1,28 @@
+# Node dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production builds
+build/
+dist/
+
+# Python environment & data files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+ENV/
+
+# Local Datasets & Generated Samples
+datasets/
+patient_ecg_sample.txt
+
+# Environment variables & system files
+.env
+.env.local
+.DS_Store
+Thumbs.db
