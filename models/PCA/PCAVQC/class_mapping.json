@@ -1,0 +1,7 @@
+{
+    "Normal": 0,
+    "LBBB": 1,
+    "RBBB": 2,
+    "APB": 3,
+    "PVC": 4
+}
