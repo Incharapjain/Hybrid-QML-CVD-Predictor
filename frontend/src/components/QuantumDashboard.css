@@ -1,0 +1,1322 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap");
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.assessment-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(237, 164, 160, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 45%,
+      rgba(237, 190, 172, 0.11),
+      transparent 28%
+    ),
+    #fffaf5;
+
+  color: #493c3b;
+
+  font-family: "DM Sans", sans-serif;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.assessment-navbar {
+  width: min(1180px, calc(100% - 60px));
+
+  margin: 0 auto;
+
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid
+    rgba(202, 114, 113, 0.14);
+}
+
+
+.assessment-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+
+.assessment-brand > div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.assessment-brand strong {
+  font-family: "Playfair Display", serif;
+
+  font-size: 21px;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  color: #473b3a;
+}
+
+
+.assessment-brand small {
+  margin-top: 2px;
+
+  font-size: 8px;
+
+  letter-spacing: 1.1px;
+
+  color: #ad8581;
+}
+
+
+.back-home {
+  padding: 11px 19px;
+
+  border: 1px solid
+    rgba(210, 111, 114, 0.28);
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  color: #b85f63;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+
+.back-home:hover {
+  background: #d96e73;
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.dashboard-q-logo {
+  width: 58px;
+  height: 58px;
+
+  display: inline-flex;
+}
+
+
+.dashboard-q-logo svg {
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+
+.dash-logo-core {
+  fill: #dc7478;
+}
+
+
+.dash-logo-q {
+  fill: #fffaf7;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 34px;
+}
+
+
+.dash-logo-ecg {
+  fill: none;
+
+  stroke: #fffaf7;
+
+  stroke-width: 2.4;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+.dash-orbit {
+  transform-origin: 60px 60px;
+
+  transform-box: view-box;
+}
+
+
+.dash-orbit ellipse {
+  fill: none;
+
+  stroke: rgba(214, 106, 110, 0.5);
+
+  stroke-width: 1.3;
+}
+
+
+.dash-orbit circle {
+  fill: #d9696d;
+}
+
+
+.dash-orbit-one {
+  animation:
+    dashOrbitOne 8s linear infinite;
+}
+
+
+.dash-orbit-two {
+  animation:
+    dashOrbitTwo 10s linear infinite;
+}
+
+
+.dash-orbit-three {
+  animation:
+    dashOrbitThree 12s linear infinite;
+}
+
+
+@keyframes dashOrbitOne {
+
+  from {
+    transform: rotate(20deg);
+  }
+
+  to {
+    transform: rotate(380deg);
+  }
+}
+
+
+@keyframes dashOrbitTwo {
+
+  from {
+    transform: rotate(85deg);
+  }
+
+  to {
+    transform: rotate(-275deg);
+  }
+}
+
+
+@keyframes dashOrbitThree {
+
+  from {
+    transform: rotate(140deg);
+  }
+
+  to {
+    transform: rotate(500deg);
+  }
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.assessment-hero {
+  padding: 75px 20px 70px;
+
+  text-align: center;
+}
+
+
+.assessment-eyebrow,
+.section-eyebrow {
+  color: #d36b70;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+.assessment-hero h1 {
+  margin: 16px 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(42px, 5vw, 65px);
+
+  font-weight: 500;
+
+  line-height: 1.05;
+}
+
+
+.assessment-hero h1 em {
+  color: #df777a;
+
+  font-weight: 500;
+}
+
+
+.assessment-hero p {
+  width: min(560px, 90%);
+
+  margin: 0 auto;
+
+  color: #907c79;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+.assessment-mini-ecg {
+  width: 310px;
+
+  margin-top: 25px;
+}
+
+
+.assessment-mini-ecg path {
+  fill: none;
+
+  stroke: #e58b8d;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+
+  animation:
+    assessmentECG 3s ease forwards;
+}
+
+
+@keyframes assessmentECG {
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.assessment-content {
+  width: min(1050px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding-bottom: 100px;
+}
+
+
+.assessment-section {
+  margin-bottom: 45px;
+
+  padding: 45px;
+
+  border: 1px solid
+    rgba(214, 126, 121, 0.18);
+
+  border-radius: 32px;
+
+  background:
+    rgba(255, 253, 249, 0.72);
+
+  box-shadow:
+    0 20px 60px rgba(119, 79, 71, 0.06);
+
+  animation:
+    sectionEntrance 0.7s ease both;
+}
+
+
+@keyframes sectionEntrance {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 22px;
+
+  margin-bottom: 32px;
+}
+
+
+.section-number {
+  font-family: "Playfair Display", serif;
+
+  font-size: 38px;
+
+  color: rgba(216, 111, 112, 0.22);
+}
+
+
+.section-heading h2 {
+  margin: 5px 0 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 30px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   UPLOAD
+========================================================= */
+
+.upload-zone {
+  min-height: 245px;
+
+  border: 1.5px dashed
+    rgba(210, 111, 113, 0.4);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 246, 242, 0.8),
+      rgba(255, 252, 248, 0.9)
+    );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.35s ease;
+}
+
+
+.upload-zone:hover {
+  border-color: #d86e72;
+
+  background: #fff7f3;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 45px
+      rgba(190, 101, 100, 0.08);
+}
+
+
+.upload-zone input {
+  display: none;
+}
+
+
+.upload-icon {
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 15px;
+
+  border-radius: 50%;
+
+  background: #fbe8e4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.upload-icon svg {
+  width: 27px;
+  height: 27px;
+
+  fill: none;
+
+  stroke: #d76c70;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+.upload-zone strong {
+  font-family: "Playfair Display", serif;
+
+  font-size: 21px;
+  font-weight: 500;
+}
+
+
+.upload-zone p {
+  margin: 7px 0 13px;
+
+  color: #9a817e;
+
+  font-size: 13px;
+}
+
+
+.supported-files {
+  color: #d27678;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   FILE INFORMATION
+========================================================= */
+
+.file-information {
+  margin-top: 18px;
+
+  padding: 17px 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr auto auto;
+
+  align-items: center;
+
+  gap: 25px;
+
+  border-radius: 18px;
+
+  background: #fff8f4;
+
+  border: 1px solid
+    rgba(215, 118, 117, 0.13);
+}
+
+
+.file-status-icon {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f5dfda;
+
+  color: #bd6266;
+
+  font-weight: 600;
+}
+
+
+.file-details,
+.sample-information,
+.window-information {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.file-information span {
+  margin-bottom: 4px;
+
+  color: #b48d88;
+
+  font-size: 8px;
+
+  letter-spacing: 1.3px;
+}
+
+
+.file-information strong {
+  color: #574744;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.assessment-error {
+  margin-top: 18px;
+
+  padding: 14px 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  border-radius: 15px;
+
+  background: #fff0ed;
+
+  border: 1px solid #f4d4ce;
+
+  color: #b95c60;
+}
+
+
+.assessment-error > span {
+  width: 27px;
+  height: 27px;
+
+  border-radius: 50%;
+
+  background: #dc7478;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.assessment-error p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ANALYSIS BUTTON
+========================================================= */
+
+.analysis-button-area {
+  margin-top: 28px;
+
+  text-align: center;
+}
+
+
+.assessment-analysis-button {
+  min-width: 235px;
+
+  padding: 15px 28px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #df7b7e,
+      #cc6267
+    );
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.4px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px
+      rgba(198, 91, 96, 0.18);
+
+  transition: 0.3s ease;
+}
+
+
+.assessment-analysis-button span {
+  margin-left: 15px;
+}
+
+
+.assessment-analysis-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 35px
+      rgba(198, 91, 96, 0.28);
+}
+
+
+.assessment-analysis-button:disabled {
+  background: #e6d5d1;
+
+  box-shadow: none;
+
+  cursor: not-allowed;
+}
+
+
+.analysis-button-area small {
+  display: block;
+
+  margin-top: 10px;
+
+  color: #b18f89;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+.analysis-spinner {
+  width: 13px;
+  height: 13px;
+
+  margin: 0 9px 0 0 !important;
+
+  display: inline-block;
+
+  border: 2px solid
+    rgba(255,255,255,0.4);
+
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  vertical-align: middle;
+
+  animation:
+    analysisSpin 0.8s linear infinite;
+}
+
+
+@keyframes analysisSpin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   ECG CHART
+========================================================= */
+
+.ecg-chart-card {
+  padding: 25px;
+
+  border-radius: 22px;
+
+  background: #fffaf7;
+
+  border: 1px solid
+    rgba(215, 120, 117, 0.13);
+}
+
+
+.chart-top {
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.chart-top > div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.chart-top span {
+  color: #bb8c87;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+}
+
+
+.chart-top strong {
+  margin-top: 4px;
+
+  font-size: 13px;
+}
+
+
+.ready-badge {
+  padding: 7px 11px;
+
+  border-radius: 20px;
+
+  background: #f8e9e5;
+
+  color: #c5676a !important;
+}
+
+
+.ecg-chart {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+
+.ecg-chart svg {
+  width: 100%;
+  height: 260px;
+
+  border-radius: 15px;
+
+  background: #fff8f5;
+}
+
+
+.small-grid {
+  fill: none;
+
+  stroke: rgba(226, 151, 147, 0.08);
+
+  stroke-width: 0.8;
+}
+
+
+.large-grid {
+  fill: none;
+
+  stroke: rgba(220, 137, 134, 0.13);
+
+  stroke-width: 1;
+}
+
+
+.uploaded-ecg-line {
+  fill: none;
+
+  stroke: #d96c70;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
+
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
+
+  animation:
+    uploadedECGDraw 2.3s ease forwards;
+}
+
+
+@keyframes uploadedECGDraw {
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+.chart-axis {
+  padding: 7px 5px 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #b59a96;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   SIGNAL STATISTICS
+========================================================= */
+
+.signal-statistics {
+  margin-top: 25px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border-top: 1px solid
+    rgba(215, 118, 116, 0.12);
+}
+
+
+.signal-stat {
+  padding: 20px;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.signal-stat:not(:last-child) {
+  border-right: 1px solid
+    rgba(215, 118, 116, 0.12);
+}
+
+
+.signal-stat span {
+  color: #b5908b;
+
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+}
+
+
+.signal-stat strong {
+  margin-top: 7px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   PROCESSING
+========================================================= */
+
+.processing-card {
+  margin-bottom: 45px;
+
+  padding: 55px 30px;
+
+  text-align: center;
+
+  border-radius: 30px;
+
+  background: #fff9f5;
+
+  border: 1px solid
+    rgba(215, 118, 116, 0.16);
+}
+
+
+.processing-orbit {
+  width: 90px;
+
+  margin: 0 auto 15px;
+}
+
+
+.processing-orbit .dashboard-q-logo {
+  width: 90px;
+  height: 90px;
+}
+
+
+.processing-card > span {
+  color: #d16c70;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+.processing-card h2 {
+  margin: 12px 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 30px;
+  font-weight: 500;
+}
+
+
+.processing-card p {
+  width: min(450px, 90%);
+
+  margin: auto;
+
+  color: #9a817d;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESULT HERO
+========================================================= */
+
+.result-hero {
+  padding: 55px 25px;
+
+  text-align: center;
+
+  border-radius: 25px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(230, 137, 137, 0.15),
+      transparent 60%
+    ),
+    #fff8f4;
+}
+
+
+.result-label {
+  color: #c96a6e;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+}
+
+
+.result-hero h2 {
+  margin: 12px 0;
+
+  font-family: "Playfair Display", serif;
+
+  color: #d5676c;
+
+  font-size: clamp(50px, 7vw, 75px);
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+
+.result-confidence {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.result-confidence strong {
+  font-size: 20px;
+
+  color: #564441;
+}
+
+
+.result-confidence span {
+  margin-top: 4px;
+
+  color: #aa8d88;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   PROBABILITY
+========================================================= */
+
+.probability-card {
+  margin-top: 22px;
+
+  padding: 30px;
+
+  border-radius: 22px;
+
+  background: #fffaf7;
+
+  border: 1px solid
+    rgba(215, 118, 116, 0.14);
+}
+
+
+.probability-heading {
+  margin-bottom: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.probability-heading span {
+  color: #c97073;
+
+  font-size: 8px;
+
+  letter-spacing: 1.8px;
+}
+
+
+.probability-heading h3 {
+  margin: 5px 0 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+.mini-ecg-icon {
+  width: 65px;
+}
+
+
+.mini-ecg-icon path {
+  fill: none;
+
+  stroke: #dd787b;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+.probability-row {
+  display: grid;
+
+  grid-template-columns:
+    130px 1fr 70px;
+
+  gap: 18px;
+
+  align-items: center;
+
+  padding: 13px 10px;
+
+  border-radius: 12px;
+}
+
+
+.detected-probability {
+  background:
+    rgba(222, 117, 119, 0.06);
+}
+
+
+.probability-name {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.probability-name strong {
+  font-size: 13px;
+}
+
+
+.probability-name span {
+  padding: 3px 6px;
+
+  border-radius: 8px;
+
+  background: #f3d8d5;
+
+  color: #bf6165;
+
+  font-size: 6px;
+
+  letter-spacing: 0.7px;
+}
+
+
+.probability-track {
+  height: 9px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background: #eee4e0;
+}
+
+
+.probability-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #e58b8c,
+      #d16469
+    );
+
+  animation:
+    probabilityGrow 1.2s ease both;
+}
+
+
+@keyframes probabilityGrow {
+
+  from {
+    max-width: 0;
+  }
+
+  to {
+    max-width: 100%;
+  }
+}
+
+
+.probability-value {
+  text-align: right;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .assessment-navbar {
+    width: calc(100% - 30px);
+
+    height: 85px;
+  }
+
+
+  .assessment-brand small {
+    display: none;
+  }
+
+
+  .assessment-brand strong {
+    font-size: 17px;
+  }
+
+
+  .dashboard-q-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+
+  .back-home {
+    padding: 9px 12px;
+
+    font-size: 11px;
+  }
+
+
+  .assessment-hero {
+    padding:
+      55px 15px 45px;
+  }
+
+
+  .assessment-section {
+    padding: 25px 18px;
+
+    border-radius: 23px;
+  }
+
+
+  .section-number {
+    font-size: 30px;
+  }
+
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+
+  .file-information {
+    grid-template-columns:
+      auto 1fr;
+
+    gap: 15px;
+  }
+
+
+  .sample-information,
+  .window-information {
+    grid-column: 2;
+  }
+
+
+  .signal-statistics {
+    grid-template-columns: 1fr;
+  }
+
+
+  .signal-stat:not(:last-child) {
+    border-right: none;
+
+    border-bottom: 1px solid
+      rgba(215, 118, 116, 0.12);
+  }
+
+
+  .probability-row {
+    grid-template-columns:
+      80px 1fr 55px;
+
+    gap: 8px;
+  }
+
+
+  .probability-name span {
+    display: none;
+  }
+
+
+  .ecg-chart svg {
+    height: 190px;
+  }
+
+}

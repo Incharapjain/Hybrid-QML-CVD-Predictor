@@ -1,0 +1,1757 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+:root {
+  --cream: #fffaf4;
+  --warm-white: #fffdf9;
+  --beige: #f7eee5;
+  --blush: #f9dedc;
+  --soft-blush: #fcebea;
+  --rose: #d96f72;
+  --deep-rose: #bd595e;
+  --light-rose: #eca4a3;
+  --brown: #514342;
+  --muted: #8c7977;
+  --border: rgba(188, 121, 117, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.heart-landing {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--brown);
+  background:
+    radial-gradient(circle at 10% 15%, #fbe5e1 0, transparent 28%),
+    radial-gradient(circle at 88% 24%, #f8e8df 0, transparent 26%),
+    linear-gradient(180deg, #fffaf5 0%, #fffdf9 45%, #fbf5ee 100%);
+  font-family: "DM Sans", sans-serif;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background-decoration {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.floating-symbol {
+  position: absolute;
+  color: rgba(211, 111, 111, 0.11);
+  font-family: Georgia, serif;
+  animation: floatSymbol 8s ease-in-out infinite;
+}
+
+.symbol-one {
+  top: 15%;
+  left: 6%;
+  font-size: 75px;
+}
+
+.symbol-two {
+  top: 31%;
+  right: 7%;
+  font-size: 40px;
+  animation-delay: 2s;
+}
+
+.symbol-three {
+  top: 51%;
+  right: 3%;
+  font-size: 110px;
+  animation-delay: 4s;
+}
+
+.symbol-four {
+  top: 69%;
+  left: 5%;
+  font-size: 50px;
+  animation-delay: 1s;
+}
+
+@keyframes floatSymbol {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(5deg);
+  }
+}
+
+.blur-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: blobMove 10s ease-in-out infinite alternate;
+}
+
+.blob-one {
+  width: 350px;
+  height: 350px;
+  background: #f4c9c6;
+  top: 500px;
+  left: -180px;
+}
+
+.blob-two {
+  width: 420px;
+  height: 420px;
+  background: #f4e1d1;
+  top: 1200px;
+  right: -220px;
+}
+
+@keyframes blobMove {
+  to {
+    transform: translate(35px, 40px) scale(1.1);
+  }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.heart-navbar {
+  position: relative;
+  z-index: 20;
+  max-width: 1280px;
+  height: 90px;
+  padding: 0 35px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heart-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: var(--brown);
+}
+
+.logo-heart {
+  width: 42px;
+  height: 42px;
+  border-radius: 50% 50% 48% 48%;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: linear-gradient(145deg, #e99595, #cf6267);
+  box-shadow: 0 8px 25px rgba(200, 92, 97, 0.2);
+  animation: gentlePulse 2.5s ease-in-out infinite;
+}
+
+.heart-logo strong,
+.heart-logo small {
+  display: block;
+}
+
+.heart-logo strong {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1.5px;
+  font-size: 17px;
+}
+
+.heart-logo small {
+  margin-top: 2px;
+  color: #a38c88;
+  font-size: 8px;
+  letter-spacing: 0.7px;
+}
+
+.heart-nav-links {
+  display: flex;
+  gap: 29px;
+}
+
+.heart-nav-links a {
+  position: relative;
+  color: #766463;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.heart-nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 0;
+  height: 1px;
+  background: var(--rose);
+  transition: 0.3s;
+}
+
+.heart-nav-links a:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+.nav-heart-button {
+  border: 1px solid rgba(205, 102, 105, 0.25);
+  border-radius: 30px;
+  padding: 11px 18px;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--deep-rose);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.nav-heart-button:hover {
+  background: var(--rose);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.heart-hero {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 90px);
+  padding: 75px 20px 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-small-label {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: var(--rose);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2.3px;
+}
+
+.hero-small-label span {
+  width: 25px;
+  height: 1px;
+  background: #e9b5b1;
+}
+
+.heart-hero h1 {
+  max-width: 850px;
+  margin: 24px 0 18px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 5vw, 65px);
+  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+.heart-hero h1 span {
+  color: var(--rose);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero-subtitle {
+  max-width: 580px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================
+   HERO ANALYSIS ORB
+========================= */
+
+.hero-heart-area {
+  position: relative;
+  z-index: 8;
+
+  width: 190px;
+  height: 150px;
+
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* MAIN CLICKABLE CIRCLE */
+
+.analysis-orb {
+  position: relative;
+  z-index: 10;
+
+  width: 118px;
+  height: 118px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(211, 111, 114, 0.28);
+
+  background: rgba(246, 244, 243, 0.94);
+
+  box-shadow:
+    0 15px 40px rgba(199, 103, 103, 0.12),
+    inset 0 0 0 7px rgba(250, 229, 225, 0.45);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #b95d61;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  animation: orbHeartbeat 2.2s ease-in-out infinite;
+}
+
+
+/* BEGIN */
+
+.analysis-orb-small {
+  margin-bottom: 4px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  opacity: 0.7;
+}
+
+
+/* ANALYSIS */
+
+.analysis-orb-main {
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+
+
+
+
+/* HOVER */
+
+.analysis-orb:hover {
+  transform: scale(1.08);
+
+  color: white;
+
+  background: linear-gradient(135deg,
+      #df8183,
+      #ca6065);
+
+  border-color: transparent;
+
+  box-shadow:
+    0 20px 50px rgba(190, 87, 91, 0.28),
+    0 0 0 10px rgba(222, 129, 129, 0.08);
+
+  animation-play-state: paused;
+}
+
+
+.analysis-orb:hover .orb-arrow {
+  transform: translateX(4px);
+}
+
+
+/* SOFT GLOW BEHIND BUTTON */
+
+.heart-glow {
+  position: absolute;
+
+  width: 145px;
+  height: 145px;
+
+  border-radius: 50%;
+
+  background: rgba(90, 5, 3, 0.17);
+
+  filter: blur(24px);
+
+  animation: glowBreath 2.2s ease-in-out infinite;
+}
+
+
+/* PULSE RINGS */
+
+.heart-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(100, 5, 5, 0.17);
+
+  pointer-events: none;
+
+  animation: analysisRing 3s ease-out infinite;
+}
+
+
+.ring-one {
+  width: 125px;
+  height: 125px;
+}
+
+
+.ring-two {
+  width: 125px;
+  height: 125px;
+
+  animation-delay: 1s;
+}
+
+
+.ring-three {
+  width: 125px;
+  height: 125px;
+
+  animation-delay: 2s;
+}
+
+
+/* HEARTBEAT-LIKE BUTTON MOTION */
+
+@keyframes orbHeartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  12% {
+    transform: scale(1.035);
+  }
+
+  22% {
+    transform: scale(1);
+  }
+
+  32% {
+    transform: scale(1.02);
+  }
+
+  42% {
+    transform: scale(1);
+  }
+}
+
+
+/* RINGS TRAVEL OUTWARD */
+
+@keyframes analysisRing {
+
+  0% {
+    transform: scale(0.82);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+
+/* BACKGROUND GLOW */
+
+@keyframes glowBreath {
+
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 0.7;
+  }
+}
+
+@keyframes heartBeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.16);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.1);
+  }
+
+  55% {
+    transform: scale(1);
+  }
+}
+
+@keyframes gentlePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes heartRing {
+  0% {
+    transform: scale(0.65);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* ECG */
+
+.hero-ecg {
+  position: relative;
+  z-index: 2;
+
+  width: min(1100px, 95vw);
+  height: 125px;
+
+  /* Pull ECG upward THROUGH the button */
+  margin-top: -138px;
+
+  overflow: visible;
+}
+.scroll-indicator {
+  margin-top: 55px;
+}
+.heartbeat-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.heartbeat-svg path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.heartbeat-shadow {
+  stroke: rgba(222, 128, 128, 0.1);
+  stroke-width: 7;
+  filter: blur(6px);
+}
+
+.heartbeat-path {
+  stroke: #dd8181;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2200;
+  stroke-dashoffset: 2200;
+  animation: drawHeartbeat 4.5s linear infinite;
+}
+
+@keyframes drawHeartbeat {
+  0% {
+    stroke-dashoffset: 2200;
+    opacity: 0.2;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -400;
+    opacity: 0;
+  }
+}
+
+/* CTA */
+
+.hero-button-container {
+  margin-top: -20px;
+  position: relative;
+  z-index: 5;
+}
+
+.know-heart-button {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: 35px;
+  padding: 16px 24px;
+  min-width: 215px;
+  background: linear-gradient(135deg, #dc7b7d, #c95e63);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 14px 35px rgba(194, 88, 92, 0.23);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  transition: 0.35s;
+}
+
+.know-heart-button::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(25deg);
+  left: -100px;
+  top: -50%;
+  transition: 0.65s;
+}
+
+.know-heart-button:hover::before {
+  left: 130%;
+}
+
+.know-heart-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 19px 40px rgba(194, 88, 92, 0.3);
+}
+
+.button-heart {
+  animation: heartBeat 1.5s infinite;
+}
+
+.button-arrow {
+  margin-left: 7px;
+}
+
+.hero-button-container p {
+  margin: 10px 0 0;
+  color: #ae9994;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.scroll-indicator {
+  margin-top: auto;
+  padding-top: 50px;
+  color: #a98e89;
+  text-decoration: none;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.scroll-indicator div {
+  margin-top: 7px;
+  font-size: 16px;
+  animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+/* HERO LOAD ANIMATIONS */
+
+.hero-load-animation {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: heroLoad 0.9s ease forwards;
+}
+
+.hero-delay-one {
+  animation-delay: 0.15s;
+}
+
+.hero-delay-two {
+  animation-delay: 0.3s;
+}
+
+.hero-delay-three {
+  animation-delay: 0.45s;
+}
+
+.hero-delay-four {
+  animation-delay: 0.65s;
+}
+
+@keyframes heroLoad {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+.section-intro {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--rose);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.3px;
+}
+
+.section-intro h2,
+.quantum-left h2,
+.about-card h2,
+.final-content h2 {
+  margin: 15px 0;
+  font-family: "Playfair Display", serif;
+  color: var(--brown);
+  font-size: clamp(35px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.section-intro h2 span,
+.quantum-left h2 span,
+.about-card h2 span {
+  color: var(--rose);
+  font-style: italic;
+}
+
+.section-intro p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* SCROLL REVEAL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.delay-1 {
+  transition-delay: 0.05s;
+}
+
+.delay-2 {
+  transition-delay: 0.15s;
+}
+
+.delay-3 {
+  transition-delay: 0.25s;
+}
+
+.delay-4 {
+  transition-delay: 0.35s;
+}
+
+/* =========================
+   JOURNEY
+========================= */
+
+.journey-section {
+  position: relative;
+  z-index: 2;
+  padding: 120px 30px 135px;
+  background: rgba(255, 253, 249, 0.78);
+}
+
+.journey-container {
+  max-width: 1180px;
+  margin: 75px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journey-step {
+  width: 220px;
+  min-height: 245px;
+  padding: 25px 20px;
+  text-align: center;
+  border-radius: 90px 90px 25px 25px;
+  background: rgba(255, 250, 246, 0.8);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.journey-number {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  color: #e8cfcb;
+  font-family: "Playfair Display";
+  font-size: 22px;
+}
+
+.journey-icon {
+  width: 72px;
+  height: 72px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: var(--soft-blush);
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.45);
+}
+
+.simple-icon {
+  color: var(--rose);
+  font-size: 26px;
+}
+
+.quantum-letter {
+  font-family: "Playfair Display";
+  font-weight: 700;
+}
+
+.journey-step h3 {
+  font-family: "Playfair Display";
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.journey-step p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.journey-connector {
+  width: 75px;
+  display: flex;
+  align-items: center;
+  color: #dda09d;
+}
+
+.journey-connector span {
+  flex: 1;
+  border-top: 1px dashed #e5b8b3;
+}
+
+.journey-connector div {
+  margin: 0 5px;
+  font-size: 9px;
+  animation: gentlePulse 2s infinite;
+}
+
+/* =========================
+   RHYTHMS
+========================= */
+
+.rhythms-section {
+  position: relative;
+  z-index: 2;
+  padding: 120px 30px 150px;
+}
+
+.rhythm-cards {
+  max-width: 980px;
+  margin: 80px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.rhythm-card {
+  position: relative;
+  width: 82%;
+  min-height: 205px;
+  padding: 30px 45px;
+  border: 1px solid rgba(204, 133, 129, 0.2);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.78),
+      rgba(255, 245, 239, 0.72));
+  box-shadow: 0 20px 60px rgba(120, 80, 73, 0.06);
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  align-items: center;
+  gap: 35px;
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.rhythm-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 25px 65px rgba(165, 98, 89, 0.11);
+}
+
+.rhythm-right {
+  align-self: flex-end;
+}
+
+.rhythm-number {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-family: "Playfair Display";
+  font-size: 45px;
+  color: rgba(119, 16, 7, 0.12);
+}
+
+.rhythm-wave-area {
+  padding: 15px;
+  border-radius: 20px;
+  background: #fff8f5;
+}
+
+.mini-wave {
+  width: 100%;
+}
+
+.mini-wave path {
+  fill: none;
+  stroke: #db7d7d;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 350;
+  animation: miniWaveMove 3.5s linear infinite;
+}
+
+@keyframes miniWaveMove {
+  from {
+    stroke-dashoffset: 350;
+  }
+
+  to {
+    stroke-dashoffset: -350;
+  }
+}
+
+.rhythm-short {
+  color: var(--rose);
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.rhythm-info h3 {
+  margin: 7px 0 10px;
+  font-family: "Playfair Display";
+  font-size: 25px;
+}
+
+.rhythm-info p {
+  max-width: 490px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* .rhythm-heart {
+  position: absolute;
+  right: -25px;
+  bottom: -60px;
+  color: rgba(217, 111, 114, 0.06);
+  font-size: 150px;
+} */
+
+/* =========================
+   QUANTUM
+========================= */
+
+.quantum-section {
+  position: relative;
+  z-index: 2;
+  padding: 130px max(30px, calc((100% - 1160px) / 2));
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  align-items: center;
+  gap: 100px;
+  background:
+    radial-gradient(circle at 85% 50%, #f5d9d6 0, transparent 32%),
+    #f9eee7;
+}
+
+.quantum-left>p {
+  max-width: 560px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.quantum-features {
+  margin-top: 35px;
+}
+
+.quantum-features>div {
+  display: flex;
+  gap: 17px;
+  margin-bottom: 23px;
+}
+
+.quantum-features>div>span {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #f4d8d4;
+  display: grid;
+  place-items: center;
+  color: var(--rose);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.quantum-features p {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.quantum-features strong {
+  margin-bottom: 3px;
+  color: var(--brown);
+  font-size: 13px;
+}
+
+.quantum-visual {
+  position: relative;
+  min-height: 570px;
+  padding: 35px;
+  border: 1px solid rgba(198, 120, 117, 0.18);
+  border-radius: 200px 200px 35px 35px;
+  background: rgba(255, 250, 246, 0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantum-background-heart {
+  position: absolute;
+  font-family: Georgia, serif;
+  color: rgba(211, 111, 111, 0.05);
+  font-size: 350px;
+}
+
+.pipeline-node {
+  position: relative;
+  z-index: 2;
+  width: 260px;
+  padding: 13px 17px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-radius: 15px;
+  border: 1px solid rgba(204, 124, 121, 0.2);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 10px 30px rgba(110, 74, 70, 0.05);
+}
+
+.pipeline-icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  background: var(--soft-blush);
+  color: var(--rose);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.pipeline-node strong,
+.pipeline-node small {
+  display: block;
+}
+
+.pipeline-node strong {
+  font-family: "Playfair Display";
+  font-size: 14px;
+}
+
+.pipeline-node small {
+  margin-top: 2px;
+  color: #a28b87;
+  font-size: 8px;
+}
+
+.pipeline-arrow {
+  height: 40px;
+  position: relative;
+  z-index: 2;
+  color: #d59a96;
+}
+
+.pipeline-arrow b {
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.quantum-core {
+  position: relative;
+  z-index: 3;
+  width: 115px;
+  height: 115px;
+  display: grid;
+  place-items: center;
+}
+
+.quantum-core-center {
+  position: relative;
+  z-index: 4;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e18a89, #c96065);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(190, 88, 91, 0.25);
+}
+
+.quantum-core-center strong {
+  font-family: "Playfair Display";
+  font-size: 27px;
+}
+
+.quantum-core-center small {
+  font-size: 6px;
+  letter-spacing: 1px;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(207, 105, 105, 0.35);
+  border-radius: 50%;
+  animation: orbitRotate 5s linear infinite;
+}
+
+.orbit-one {
+  width: 105px;
+  height: 55px;
+}
+
+.orbit-two {
+  width: 55px;
+  height: 105px;
+  animation-direction: reverse;
+}
+
+.orbit span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  top: -4px;
+  left: 50%;
+  border-radius: 50%;
+  background: var(--deep-rose);
+}
+
+@keyframes orbitRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+  position: relative;
+  z-index: 2;
+  padding: 120px 30px;
+  background: var(--warm-white);
+}
+
+.about-card {
+  max-width: 850px;
+  margin: auto;
+  padding: 65px 70px;
+  text-align: center;
+  border-radius: 150px 150px 35px 35px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #fff9f6, #fdf4ed);
+}
+
+.about-heart {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--soft-blush);
+  color: var(--rose);
+  font-size: 25px;
+  animation: heartBeat 2s infinite;
+}
+
+.about-card p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-section {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, #fae2df, transparent 50%),
+    var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.final-content {
+  position: relative;
+  z-index: 4;
+  max-width: 720px;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.final-heart {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+  color: var(--rose);
+  font-size: 32px;
+  box-shadow: 0 12px 40px rgba(185, 98, 96, 0.14);
+  animation: heartBeat 1.6s infinite;
+}
+
+.final-content h2 {
+  font-size: clamp(45px, 5vw, 64px);
+}
+
+.final-content p {
+  max-width: 550px;
+  margin: 0 auto 30px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.final-button {
+  margin-top: 5px;
+}
+
+.final-wave {
+  position: absolute;
+  width: 100%;
+  height: 130px;
+  opacity: 0.28;
+}
+
+.wave-top {
+  top: 20px;
+}
+
+.wave-bottom {
+  bottom: 15px;
+  transform: scaleX(-1);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.heart-footer {
+  min-height: 130px;
+  padding: 30px max(30px, calc((100% - 1180px) / 2));
+  border-top: 1px solid var(--border);
+  background: #fffaf5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heart-footer p,
+.heart-footer>span {
+  color: #a18c88;
+  font-size: 9px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .heart-nav-links {
+    display: none;
+  }
+
+  .journey-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .journey-step {
+    width: min(100%, 400px);
+    border-radius: 70px 70px 25px 25px;
+  }
+
+  .journey-connector {
+    height: 50px;
+    width: auto;
+    flex-direction: column;
+  }
+
+  .journey-connector span {
+    width: 1px;
+    border: none;
+    border-left: 1px dashed #e5b8b3;
+  }
+
+  .rhythm-card {
+    width: 100%;
+  }
+
+  .quantum-section {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .quantum-visual {
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .heart-navbar {
+    height: 75px;
+    padding: 0 17px;
+  }
+
+  .heart-logo small {
+    display: none;
+  }
+
+  .nav-heart-button {
+    font-size: 10px;
+    padding: 9px 12px;
+  }
+
+  .heart-hero {
+    min-height: calc(100vh - 75px);
+    padding-top: 55px;
+  }
+
+  .heart-hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+  .hero-ecg {
+    width: 115%;
+  }
+
+  .journey-section,
+  .rhythms-section,
+  .about-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .rhythm-card {
+    padding: 28px 23px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .rhythm-wave-area {
+    max-width: 260px;
+  }
+
+  .rhythm-info h3 {
+    font-size: 22px;
+  }
+
+  .quantum-section {
+    padding: 90px 20px;
+  }
+
+  .quantum-visual {
+    padding: 30px 15px;
+  }
+
+  .pipeline-node {
+    width: 230px;
+  }
+
+  .about-card {
+    padding: 50px 25px;
+    border-radius: 90px 90px 25px 25px;
+  }
+
+  .heart-footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 35px 20px;
+  }
+}
+
+/* ========================================
+   Q-CARDIO ANIMATED QUANTUM + ECG LOGO
+======================================== */
+
+.qcardio-logo {
+  width: 70px;
+  height: 70px;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+
+.qcardio-logo-svg {
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+
+/* ========================================
+   CENTER CIRCLE
+======================================== */
+
+.logo-core {
+  fill: #db7478;
+
+  filter:
+    drop-shadow(0 5px 8px rgba(193, 86, 91, 0.16));
+}
+
+
+.logo-core-glow {
+  fill: rgba(220, 116, 120, 0.13);
+
+  filter: blur(4px);
+}
+
+
+/* ========================================
+   Q
+======================================== */
+
+.logo-q {
+  fill: #fffaf7;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 30px;
+  font-weight: 500;
+}
+
+
+/* ========================================
+   ECG WAVE
+======================================== */
+
+.logo-ecg {
+  fill: none;
+
+  stroke: #fffaf7;
+  stroke-width: 2;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+
+  animation: logoECGDraw 2.7s ease-in-out infinite;
+}
+
+
+@keyframes logoECGDraw {
+
+  0% {
+    stroke-dashoffset: 80;
+    opacity: 0.4;
+  }
+
+  35% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  75% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -80;
+    opacity: 0.4;
+  }
+}
+
+
+/* ========================================
+   ORBIT LINES
+======================================== */
+
+.logo-orbit-line {
+  fill: none;
+
+  stroke: rgba(215, 104, 109, 0.58);
+
+  stroke-width: 1.25;
+}
+
+
+.logo-orbit-soft {
+  stroke: rgba(215, 104, 109, 0.35);
+
+  stroke-width: 1;
+}
+
+
+/* ========================================
+   ELECTRONS
+======================================== */
+
+.logo-electron {
+  fill: #d9686d;
+
+  filter:
+    drop-shadow(0 2px 3px rgba(182, 72, 78, 0.25));
+}
+
+
+.small-electron {
+  opacity: 0.8;
+}
+
+
+/* ========================================
+   IMPORTANT:
+   ALL ORBITS ROTATE AROUND CENTER
+======================================== */
+
+.logo-orbit-group {
+  transform-box: view-box;
+  transform-origin: 60px 60px;
+}
+
+
+/* ORBIT 1 */
+
+.orbit-group-1 {
+  transform: rotate(25deg);
+
+  animation:
+    orbitOne 7s linear infinite;
+}
+
+
+/* ORBIT 2 */
+
+.orbit-group-2 {
+  transform: rotate(78deg);
+
+  animation:
+    orbitTwo 9s linear infinite;
+}
+
+
+/* ORBIT 3 */
+
+.orbit-group-3 {
+  transform: rotate(135deg);
+
+  animation:
+    orbitThree 11s linear infinite;
+}
+
+
+/* ORBIT 4 */
+
+.orbit-group-4 {
+  transform: rotate(-40deg);
+
+  animation:
+    orbitFour 8s linear infinite;
+}
+
+
+/* ========================================
+   ORBIT ANIMATIONS
+======================================== */
+
+@keyframes orbitOne {
+
+  from {
+    transform: rotate(25deg);
+  }
+
+  to {
+    transform: rotate(385deg);
+  }
+}
+
+
+@keyframes orbitTwo {
+
+  from {
+    transform: rotate(78deg);
+  }
+
+  to {
+    transform: rotate(-282deg);
+  }
+}
+
+
+@keyframes orbitThree {
+
+  from {
+    transform: rotate(135deg);
+  }
+
+  to {
+    transform: rotate(495deg);
+  }
+}
+
+
+@keyframes orbitFour {
+
+  from {
+    transform: rotate(-40deg);
+  }
+
+  to {
+    transform: rotate(-400deg);
+  }
+}
+
+
+/* ========================================
+   VERY SUBTLE CENTER PULSE
+======================================== */
+
+.logo-core {
+  transform-box: fill-box;
+  transform-origin: center;
+
+  animation:
+    logoCorePulse 2.5s ease-in-out infinite;
+}
+
+
+@keyframes logoCorePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+}
