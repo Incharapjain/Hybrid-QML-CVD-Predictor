@@ -309,5 +309,12 @@ The risk-stratification component is intended as research-oriented clinical deci
 ---
 
 **Project:** Q-CardioNet – A Hybrid CNN-Quantum Variational Circuit for Robust ECG Arrhythmia Classification.
+## 13. Team Members
 
+1. Dhanyashree G Suvarna
+2. Inchara P Jain
+3. Thrupthi V Bhandary
+4. Pratham P Alva
+
+**Department:** Computer Science and Engineering
 **Institution:** Sahyadri College of Engineering and Management, Mangaluru, India.
