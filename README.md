@@ -28,7 +28,7 @@ The framework classifies ECG signals into five categories:
 - Cyclic closed-ring CNOT entanglement.
 - Five-class arrhythmia classification.
 - Rule-based clinical risk stratification.
-- Comparison with SVM-VQC and PCA-VQC baseline models.
+  
 
 ## 3. System Architecture
 
@@ -256,11 +256,11 @@ python <evaluation_script>.py
 
 The proposed CNN-VQC model was compared with two baseline models using an independent 600-sample test set.
 
-| Model | Accuracy | Precision | Recall | F1-Score |
-|---|---:|---:|---:|---:|
-| PCA-VQC | 74.67% | 80.85% | 74.67% | 77.19% |
-| SVM-VQC | 88.00% | 89.00% | 88.00% | 88.00% |
-| CNN-VQC | 93.56% | 86.38% | 90.81% | 88.10% |
+| Model | Accuracy |
+|---|---:|---
+| CNN-QELM | 92.33
+| CNN-QCNN | 93.14
+| CNN-VQC | 93.56%
 
 The proposed CNN-VQC architecture achieved the highest classification accuracy among the evaluated models.
 
